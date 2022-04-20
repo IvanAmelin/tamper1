@@ -8,12 +8,12 @@
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @grant        none
 // ==/UserScript==
+let links = document.links;
+if (location.pathname === '/') {
 let keywords = ["купля-продажа авто", "каталог автомобилей", "автомобили купить"];
 let keyword = keywords[getRandom(0, keywords.length)];
 let text = document.getElementById('text');
-let links = document.links;
 text.value = keyword;
-if (location.pathname === '/') {
 setTimeout(() => {
 document.getElementsByClassName("button mini-suggest__button button_theme_search button_size_search i-bem button_js_inited")[0].click();
 },1000);
